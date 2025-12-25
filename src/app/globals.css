@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Font Variables defined in layout.tsx are available here */
+}
+
+/* Custom Utilities for Reveal System */
+@layer utilities {
+  .reveal-base {
+    transition: all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1);
+    will-change: transform, opacity, filter;
+  }
+
+  .reveal-hidden-blur-up {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(12px);
+  }
+
+  .reveal-hidden-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(5px);
+  }
+
+  .reveal-hidden-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    filter: blur(8px);
+  }
+
+  .reveal-hidden-right {
+    opacity: 0;
+    transform: translateX(50px);
+    filter: blur(8px);
+  }
+
+  .reveal-visible {
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+    filter: blur(0) !important;
+  }
+
+  /* Delays */
+  .delay-100 {
+    transition-delay: 100ms;
+  }
+
+  .delay-200 {
+    transition-delay: 200ms;
+  }
+
+  .delay-300 {
+    transition-delay: 300ms;
+  }
+
+  .delay-500 {
+    transition-delay: 500ms;
+  }
+}
+
+/* Mobile-first icon list item */
+@layer components {
+  .icon-list-item {
+    @apply flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-3 text-center lg:text-left;
+  }
+
+  .mobile-center {
+    @apply text-center lg:text-left;
+  }
+
+  .section-padding {
+    @apply py-10 lg:py-16;
+  }
+}
+
+body {
+  @apply bg-brand-50 text-stone-800 font-sans antialiased;
+}
